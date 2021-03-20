@@ -5,8 +5,8 @@ export default class Role extends BaseModel {
   @column({ isPrimary: true })
   public id: string
 
-  @column({ columnName: 'name', serializeAs: null })
-  public name: string
+  @column({ columnName: 'role', serializeAs: null })
+  public role: string
 
   @column({ columnName: 'slug' })
   public slug: string
