@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
-export default class Profiles extends BaseSchema {
-  protected tableName = 'profiles'
+export default class Addresses extends BaseSchema {
+  protected tableName = 'addresses'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
@@ -14,10 +14,12 @@ export default class Profiles extends BaseSchema {
         .onUpdate('CASCADE')
         .notNullable()
 
-      table.string('nickname')
-      table.string('fone')
-      table.date('birthdate')
-      table.string('gender')
+      table.string('zipcode')
+      table.string('street')
+      table.string('number')
+      table.string('city')
+      table.string('uf')
+      table.string('description')
 
       table.string('is_deleted').defaultTo('false')
       table.timestamps(true)

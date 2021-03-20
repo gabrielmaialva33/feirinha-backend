@@ -44,7 +44,7 @@ const databaseConfig: DatabaseConfig & { orm: Partial<OrmConfig> } = {
         database: Env.get('DB_NAME', 'postgres') as string,
       },
       healthCheck: false,
-      debug: false,
+      debug: Env.get('DB_DEBUG', false) as boolean,
     },
   },
 
