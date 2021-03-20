@@ -12,8 +12,10 @@
   },
   "devDependencies": {
     "@adonisjs/assembler": "^3.0.0",
+    "@types/cli-color": "^2.0.0",
     "@types/pg": "^7.14.11",
     "adonis-preset-ts": "^2.0.0",
+    "cli-color": "^2.0.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-adonis": "^1.2.1",
