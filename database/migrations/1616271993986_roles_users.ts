@@ -1,28 +1,28 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
-export default class CategoriesProducts extends BaseSchema {
-  protected tableName = 'categories_products'
+export default class RolesUsers extends BaseSchema {
+  protected tableName = 'roles_users'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid('id').primary().defaultTo(this.db.rawQuery('uuid_generate_v4()').knexQuery)
 
+      table.uuid('role_id').index()
       table
-        .uuid('category_id')
+        .foreign('role_id')
         .references('id')
-        .inTable('categories')
+        .inTable('roles')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
-        .notNullable()
-      table
-        .uuid('product_id')
-        .references('id')
-        .inTable('products')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE')
-        .notNullable()
 
-      table.timestamps(true, true)
+      table.uuid('user_id').index()
+      table
+        .foreign('user_id')
+        .references('id')
+        .inTable('users')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE')
+      table.timestamps(true)
     })
   }
 
