@@ -22,7 +22,8 @@ export default class RolesUsers extends BaseSchema {
         .inTable('users')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
-      table.timestamps(true)
+
+      table.timestamps(true, true)
     })
   }
 

@@ -10,7 +10,7 @@ export default class Users extends BaseSchema {
       table.string('name').notNullable()
       table.string('username').notNullable()
       table.string('email').notNullable()
-      table.string('password_hash').notNullable()
+      table.string('password').notNullable()
 
       table
         .uuid('role_id')
