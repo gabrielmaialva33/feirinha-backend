@@ -10,7 +10,18 @@ export default class Users extends BaseSchema {
       table.string('name').notNullable()
       table.string('username').notNullable()
       table.string('email').notNullable()
+      table.string('password_hash').notNullable()
 
+      table
+        .uuid('role_id')
+        .references('id')
+        .inTable('roles')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE')
+        .notNullable()
+
+      table.boolean('registration_completed').defaultTo(false)
+      table.boolean('is_activated').defaultTo(true)
       table.boolean('is_deleted').notNullable().defaultTo(false)
       table.timestamps(true)
     })
