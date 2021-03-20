@@ -1,0 +1,13 @@
+postgres:
+  image: postgres:latest
+  container_name: feirinha-app
+  restart: always
+  environment:
+    - TZ=America/Sao_Paulo
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=postgres
+  ports:
+    - '5432:5432'
+
+
