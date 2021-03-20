@@ -8,6 +8,7 @@ export default class Categories extends BaseSchema {
       table.uuid('id').primary().defaultTo(this.db.rawQuery('uuid_generate_v4()').knexQuery)
 
       table.string('name').notNullable()
+      table.string('slug').notNullable()
 
       table.string('is_deleted').defaultTo('false')
       table.timestamps(true)
